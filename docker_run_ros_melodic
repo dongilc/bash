@@ -1,0 +1,5 @@
+docker run -it --rm \
+	--privileged \
+	--name hypriot-ros-melodic-drcl_1 \
+	-v /home/pirate/workspace:/mnt/workspace_hostshare \
+	dongilc/hypriot-ros-melodic-drcl:latest

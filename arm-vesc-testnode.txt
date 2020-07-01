@@ -1,0 +1,9 @@
+2019. 07. 26. Ubuntu 18.04에서 펌웨어 굽기 테스트
+1. ubuntu 재설치후
+2. arm tool chain은 bash에 만들어놓은 arm tool 인스톨 스크립트로 함.
+3. openocd는 sudo apt install openocd로 함. 확인해보니 버전은 0.10.0이 깔림.
+4. vesc_tool 최신 버전으로 modemmanager제거, udev reload, serial write 권한등 세팅후 reboot함.
+5. terminal에서 make upload로 펌웨어 설치
+6. test 결과 문제없음. motor conf setup 잘 작동함. conf 저장값 load해서 적용하는거 잘됨.
+- 단, 테스트하다가 펌웨어 upload하고 다시 usb연결할라하면 busy뜨는 경우가 있는데 이럴땐 usb를 뺐다가 껴야함.
+

@@ -1,0 +1,17 @@
+# After Synology Git SERVER install
+1. connect synology using ssh
+2. mkdir git_directory.git
+3. cd ./git_directory.git
+4. git init --bare
+
+# make client side git-repo and push
+# example
+mkdir dongilc
+cd dongilc
+git init
+git remote add origin ssh://cdi@192.168.27.10/volume1/homes/cdi/git_repos/dongilc.git
+git add .
+git commit -a -m "1st commit"
+git push origin master
+
+
