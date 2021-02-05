@@ -7,7 +7,8 @@
 
 HOST_NAME=$(hostname)
 UNAME=$(uname)
-ROS_DISTRO=melodic
+#ROS_DISTRO=melodic
+ROS_DISTRO=noetic
 
 # OSX
 if [ "$UNAME" = "Darwin" ];then
@@ -24,13 +25,17 @@ else
     BASE_DIR="/mnt/hgfs/SynologyDrive"
   elif [ "$HOST_NAME" = "drcl-Jxavier" ];then
     BASE_DIR="$HOME/ShareData_SSD"
+  elif [ "$HOST_NAME" = "cdi-VM" ];then
+    BASE_DIR="$HOME"
+    WS_DIR="$BASE_DIR/workspace"
   else
     BASE_DIR="$HOME/Dropbox/Workspace_CDI"
+    WS_DIR="BASE_DIR/workspace_prog"
   fi
 fi
 
-WS_DIR="$BASE_DIR/workspace_prog"
-CATKIN_DIR="$BASE_DIR/workspace_prog/catkin_ws"
+#WS_DIR="$BASE_DIR/workspace_prog"
+#CATKIN_DIR="$BASE_DIR/workspace_prog/catkin_ws"
 CATKIN_WS_GIT="https://dongilc:DRCLy121@github.com/dongilc/catkin_ws.git"
 BASH_GIT="https://dongilc:DRCLy121@github.com/dongilc/bash.git"
 
