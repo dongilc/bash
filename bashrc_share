@@ -33,6 +33,7 @@ WS_DIR="$BASE_DIR/workspace_prog"
 CATKIN_DIR="$BASE_DIR/workspace_prog/catkin_ws"
 CATKIN_WS_GIT="https://dongilc:DRCLy121@github.com/dongilc/catkin_ws.git"
 BASH_GIT="https://dongilc:DRCLy121@github.com/dongilc/bash.git"
+VESC_FW_GIT="https://dongilc:DRCLy121@github.com/dongilc/bldc_5.02_openrobot_ver1.git"
 
 ## ROS
 #ROS_CONN_DEVICE="wlp59s0" # wlp59s0, wlan0, eth0
@@ -73,12 +74,13 @@ alias cs='cd $WS_DIR/catkin_ws/src'
 alias cb='cd $WS_DIR/bash'
 alias cg='cd $WS_DIR/github_ws'
 alias ck='cd $WS_DIR/docker_ws'
-alias cf='cd $WS_DIR/vescuino_fw/bldc-mjvesc_v01_3.40'
-alias cm='cd $CATKIN_DIR && catkin_make'
+alias cf='cd $WS_DIR/vescuino_fw/bldc_5.02_openrobot_ver1'
+alias cm='catkin_make'
 alias rc='rm -rf ./build ./devel'
 alias rd='rosdep install --from-paths . --ignore-src -r -y'
 alias vt='~/vesc_tool_0.95'
 alias sd='source devel/setup.bash'
+alias rp='rospack profile'
 alias rv='roslaunch vesc_driver vesc_driver_node.launch port:=/dev/ttyACM0'
 alias rv1='roslaunch vesc_driver vesc_driver_node.launch port:=/dev/ttyACM1'
 alias dr='roslaunch diff_wheel_platform diff_wheel_platform_teleop.launch'
@@ -101,10 +103,12 @@ alias as='sudo apt-cache search'
 alias bh='cat $WS_DIR/bash/bashrc_share'
 alias ub='ls -l /dev/serial/by-id/'
 alias ui='udevadm info'
+alias hi='hwinfo --short'
 alias eb='vim bashrc_share'	
 alias gs='git config --global user.email \"dongilc@mju.ac.kr\" && git config --global user.name \"dongilc\"'
 alias gc='git add . && git commit -m $GIT_NOW && git push $CATKIN_WS_GIT'
 alias gb='git add . && git commit -m $GIT_NOW && git push $BASH_GIT'
+alias gf='git add . && git commit -m $GIT_NOW && git push $VESC_FW_GIT'
 alias am='sudo chmod a+rw /dev/ttyACM0'
 alias vd='tio -b 38400 /dev/ttyUSB0'  # VESC Debug using UART2
 alias si='nmap -sP 192.168.0.1/24'
