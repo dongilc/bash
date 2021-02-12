@@ -45,6 +45,7 @@ alias ki='rosrun teleop_twist_keyboard teleop_twist_keyboard.py'
 alias hq0='roslaunch huboq_remastered_ver1 huboq_remastered_ver1_teleop.launch port:=/dev/ttyACM0'
 alias hq1='roslaunch huboq_remastered_ver1 huboq_remastered_ver1_teleop.launch port:=/dev/ttyACM1'
 alias hq2='roslaunch huboq_remastered_ver1 huboq_remastered_ver1_teleop.launch port:=/dev/ttyACM2'
+alias mr0='roslaunch mecanum_robot_ver1 mecanum_robot_ver1_teleop.launch'
 
 # Additional useful Alias Commands
 alias gc='git clone https://github.com/dongilc/catkin_ws.git'
@@ -56,3 +57,4 @@ alias ub='ls -l /dev/serial/by-id/'
 alias ui='udevadm info'
 alias eb='vim bashrc_share_odroid'	
 alias vd='tio -b 38400 /dev/ttyUSB0'  # VESC Debug using UART2
+alias sr='screen -r'
