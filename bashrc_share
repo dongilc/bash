@@ -8,7 +8,7 @@
 HOST_NAME=$(hostname)
 UNAME=$(uname)
 #ROS_DISTRO=melodic
-ROS_DISTRO=noetic
+#ROS_DISTRO=noetic
 
 # OSX
 if [ "$UNAME" = "Darwin" ];then
@@ -30,7 +30,8 @@ else
     WS_DIR="$BASE_DIR/workspace"
   else
     BASE_DIR="$HOME/Dropbox/Workspace_CDI"
-    WS_DIR="BASE_DIR/workspace_prog"
+    WS_DIR="$BASE_DIR/workspace_prog"
+    ROS_DISTRO=melodic
   fi
 fi
 
