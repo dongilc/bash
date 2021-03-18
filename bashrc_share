@@ -117,6 +117,7 @@ alias gb='git add . && git commit -m $GIT_NOW && git push $BASH_GIT'
 alias gf='git add . && git commit -m $GIT_NOW && git push $VESC_FW_GIT'
 alias am='sudo chmod a+rw /dev/ttyACM0'
 alias vd='tio -b 38400 /dev/ttyUSB0'  # VESC Debug using UART2
+alias uv='sudo java -jar -Dsun.java2d.uiScale=2.5 ~/Dropbox/DRCL_SHARE/uCCBViewer-2.5.jar'
 alias si='nmap -sP 192.168.0.1/24'
 
 # Only in XPS 9570
