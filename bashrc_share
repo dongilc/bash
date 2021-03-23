@@ -28,6 +28,10 @@ else
   elif [ "$HOST_NAME" = "cdi-VM" ];then
     BASE_DIR="$HOME"
     WS_DIR="$BASE_DIR/workspace"
+  elif [ "$HOST_NAME" = "cdi-ZBook" ];then
+    BASE_DIR="$HOME/Dropbox/Workspace_CDI"
+    WS_DIR="$BASE_DIR/workspace_prog"
+    ROS_DISTRO=melodic
   else
     BASE_DIR="$HOME/Dropbox/Workspace_CDI"
     WS_DIR="$BASE_DIR/workspace_prog"
