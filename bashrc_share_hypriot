@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Post Common Sourcing File
+WS_DIR="/mnt/workspace_hostshare"
+CATKIN_DIR="/mnt/workspace_hostshare/catkin_ws"
+#ROS_CONN_DEVICE="wlp59s0" # wlp59s0, wlan0, eth0
+#ROS_MASTER_IP=$(ifconfig $ROS_CONN_DEVICE | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')
+#ROS_HOST_IP="192.168.27.?" # 
+
+# ROS Configuration
+#export ROS_MASTER_URI="http://192.168.28.102:11311"
+#export ROS_HOSTNAME="192.168.28.102"
+source $CATKIN_DIR/devel/setup.bash
+
+# Frequent Commands, CDI for system control
+alias off='sudo shutdown -h now' #requires root password, disable it by "sudo chmod u+s /sbin/shutdown"
+alias rb='sudo shutdown -r now' #requires root password, disable it by "sudo chmod u+s /sbin/shutdown"
+alias susp='sudo pm-suspend'
+alias lschm='stat -c '"'"'%a %n'"'"' *'
+alias up='sudo apt update && sudo apt upgrade'
+alias ss='service --status-all | grep +'
+
+# Frequent Commands. CDI - Connections
+alias lrs='export ROS_MASTER_URI=http://localhost:11311'
+alias csr='ssh -Y cdi@192.168.28.72'
+alias csj='ssh -Y nvidia@192.168.28.5'
+alias amg='ssh -Y nvidia@192.168.28.121'
+alias ras='ssh -Y pi@192.168.28.32'
+
+# Set ROS Alias Commands
+alias cw='cd $WS_DIR'
+alias cc='cd $CATKIN_DIR'
+alias cs='cd $WS_DIR/catkin_ws/src'
+alias cb='cd $WS_DIR/bash'
+alias cm='cd $CATKIN_DIR && catkin_make'
+alias rc='rm -rf ./build ./devel'
+alias rv='roslaunch vesc_driver vesc_driver_node.launch port:=/dev/ttyACM0'
+alias rv1='roslaunch vesc_driver vesc_driver_node.launch port:=/dev/ttyACM1'
+alias dr='roslaunch diff_wheel_platform diff_wheel_platform_teleop.launch'
+alias am='roslaunch amg_p1 amg_p1_teleop.launch'
+alias vc='roslaunch vesc_control_ex1 vesc_control_ex1_teleop.launch'
+alias vc1='roslaunch vesc_control_ex1 vesc_control_ex1_teleop.launch port:=/dev/ttyACM0'
+alias or='roslaunch omniwheel_robot omniwheel_robot_teleop.launch port:=/dev/ttyACM0'
+alias ki='rosrun teleop_twist_keyboard teleop_twist_keyboard.py'
+alias hq0='roslaunch huboq_remastered_ver1 huboq_remastered_ver1_teleop.launch port:=/dev/ttyACM0'
+alias hq1='roslaunch huboq_remastered_ver1 huboq_remastered_ver1_teleop.launch port:=/dev/ttyACM1'
+alias hq2='roslaunch huboq_remastered_ver1 huboq_remastered_ver1_teleop.launch port:=/dev/ttyACM2'
+
+# Additional useful Alias Commands
+alias gc='git clone https://github.com/dongilc/catkin_ws.git'
+alias gb='git clone https://github.com/dongilc/bash.git'
+alias gs='git clone https://github.com/wjwwood/serial.git'
+alias as='sudo apt-cache search'
+alias bh='cat $WS_DIR/bash/bashrc_share_odroid'
+alias ub='ls -l /dev/serial/by-id/'
+alias ui='udevadm info'
+alias eb='vim bashrc_share_odroid'	
+alias vd='tio -b 38400 /dev/ttyUSB0'  # VESC Debug using UART2

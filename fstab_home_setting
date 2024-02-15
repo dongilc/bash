@@ -1,0 +1,2 @@
+# /home was on /dev/nvme0n1p6 during installation
+UUID=f5be4bad-bebb-48ec-a5db-3a59da4a7429 /home/cdi/ShareData      ext4    defaults        0       2
